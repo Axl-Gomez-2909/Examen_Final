@@ -1,0 +1,37 @@
+﻿ ﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Examen_Final.ViewModels"
+             x:Class="Examen_Final.MainPage"
+            Title="Operaciones">
+    <ContentPage Title="Area de un Circulo">
+        <ContentPage.BindingContext>
+            <viewModel:CirculoViewModel/>
+        </ContentPage.BindingContext>
+
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Ingrese el radio del circulo:" />
+            <Entry Keyboard="Numeric" Text="{Binding Radio}" />
+            <Label Text="Resultado" />
+            <Entry Text="{Binding Resultado}" IsReadOnly="True" />
+            <Button Text="Calcular" Command="{Binding CalcularCommand}"  BackgroundColor="#4CAF50" TextColor="White"/>
+            <Button Text="Limpiar" Command="{Binding LimpiarCommand}" BackgroundColor="#FF5722" TextColor="White"/>
+        </VerticalStackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Area de un Rectangulo">
+        <ContentPage.BindingContext>
+            <viewModel:RectanguloViewModel/>
+        </ContentPage.BindingContext>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Ingrese la base" />
+            <Entry Keyboard="Numeric" Text="{Binding Baser}" />
+            <Label Text="Ingrese la altura" />
+            <Entry Keyboard="Numeric" Text="{Binding Altura}" />
+            <Label Text="Resultado" />
+            <Entry Text="{Binding Resultado}" IsReadOnly="True" />
+            <Button Text="Calcular" Command="{Binding EjecutarCommand}"  BackgroundColor="#4CAF50" TextColor="White"/>
+            <Button Text="Limpiar" Command="{Binding LimpiarCommand}" BackgroundColor="#FF5722" TextColor="White"/>
+        </VerticalStackLayout>
+    </ContentPage>
+</TabbedPage>
